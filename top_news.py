@@ -10,7 +10,7 @@ url = "https://real-time-news-data.p.rapidapi.com/top-headlines"
 querys = [{"country": "AU", "lang": "en"}, {"country": "IN", "lang": "en"}, {"country": "US", "lang": "en"}]
 
 head = {
-	"X-RapidAPI-Key": "7772eec8bemsh2c217cdf87c3897p1f7966jsn45efba2ad030",
+	"X-RapidAPI-Key": "6fe31882b5msh3abdfd03c4e9fa3p19c0d9jsn503162dde2c6",
 	"X-RapidAPI-Host": "real-time-news-data.p.rapidapi.com"
 }
 
@@ -18,7 +18,6 @@ class news_article:
 
     # Create API Call function
     def get_news_articles(self, url, head, query):
-        # Since smooth_data is used for the dataframe we need to make it a global variable
         
         resp = requests.request("GET", url, headers=head, params=query).json()
         rdata = resp['data']
@@ -61,9 +60,15 @@ class gen_dframe:
 news = news_article()    
 generate = gen_dframe()
 
+allData = []
+
 for query in querys:
     news.get_news_articles(url,head,query)
     dframe = generate.smooth_to_dframe(news.dataout)
-    print(dframe.head())
+    allData.append(dframe)
+
+print(allData[2])
+
+    
 
 
