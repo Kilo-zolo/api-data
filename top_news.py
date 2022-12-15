@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 import time
 from itertools import groupby
+import APIconfig
 
 # Get API specific details and store them in variables
 url = "https://real-time-news-data.p.rapidapi.com/top-headlines"
@@ -10,7 +11,7 @@ url = "https://real-time-news-data.p.rapidapi.com/top-headlines"
 querys = [{"country": "AU", "lang": "en"}, {"country": "IN", "lang": "en"}, {"country": "US", "lang": "en"}]
 
 head = {
-	"X-RapidAPI-Key": api_key,
+	"X-RapidAPI-Key": APIconfig.api_key,
 	"X-RapidAPI-Host": "real-time-news-data.p.rapidapi.com"
 }
 
