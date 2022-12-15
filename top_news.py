@@ -10,7 +10,7 @@ url = "https://real-time-news-data.p.rapidapi.com/top-headlines"
 querys = [{"country": "AU", "lang": "en"}, {"country": "IN", "lang": "en"}, {"country": "US", "lang": "en"}]
 
 head = {
-	"X-RapidAPI-Key": "6fe31882b5msh3abdfd03c4e9fa3p19c0d9jsn503162dde2c6",
+	"X-RapidAPI-Key": api_key,
 	"X-RapidAPI-Host": "real-time-news-data.p.rapidapi.com"
 }
 
